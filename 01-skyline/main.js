@@ -40,7 +40,12 @@ function draw() {
 
 function resetData() {
 	// empty buildings array
+	buildings = [];
 	// use a loop to create random heights
+	for (let i = 0; i < numBuildings; i++) {
+		let randomHeigth = random(50, 200);
+		buildings.push(randomHeigth);
+	}
 
 	updateDOM();
 }
@@ -48,7 +53,10 @@ function resetData() {
 function growCity() {
 	// 4. Grow the City
 	// Use .map() to create a new array where buildings are 10% taller
-	console.log("Grow city");
+	let newBuildings = buildings.map(function () {
+		buildings * 1.1;
+	});
+	console.log(newBuildings);
 	updateDOM();
 }
 
